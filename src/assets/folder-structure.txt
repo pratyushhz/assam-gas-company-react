@@ -1,0 +1,77 @@
+src/
+├── assets/
+│   ├── images/
+│   ├── styles/
+│   └── fonts/
+├── components/
+│   ├── common/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Sidebar.jsx
+│   │   └── DropdownMenu.jsx
+│   └── ui/
+│       ├── Button.jsx
+│       ├── Card.jsx
+│       ├── Modal.jsx
+│       └── Loader.jsx
+├── layouts/
+│   ├── MainLayout.jsx
+│   ├── KnowledgeHubLayout.jsx
+│   └── MinimalLayout.jsx
+├── pages/
+│   ├── Home/
+│   │   └── Home.jsx
+│   ├── KnowledgeHub/
+│   │   ├── BenefitsOfNaturalGas.jsx
+│   │   ├── GasSafetyTips.jsx
+│   │   ├── EnergyCalculators.jsx
+│   │   └── SafetyPrecautions.jsx
+│   ├── CSRInitiatives/
+│   │   ├── OurCSRProjects.jsx
+│   │   ├── CSRAnnualReports.jsx
+│   │   └── CSRPolicies.jsx
+│   ├── Governance/
+│   │   ├── PoliciesAndGuidelines.jsx
+│   │   ├── ActsRulesAndRegulations.jsx
+│   │   ├── CodeOfConduct.jsx
+│   │   ├── CitizenCharter.jsx
+│   │   └── Certifications.jsx
+│   ├── MediaCenter/
+│   │   ├── CorporateBrochure.jsx
+│   │   ├── PressReleases.jsx
+│   │   ├── NewsAndEvents.jsx
+│   │   ├── PhotoGallery.jsx
+│   │   ├── VideoLibrary.jsx
+│   │   ├── AGCLCorporateSong.jsx
+│   │   └── AGCLCorporateVideo.jsx
+│   └── AboutUs/
+│       ├── WhoWeAre.jsx
+│       ├── MissionAndVision.jsx
+│       ├── OurLeadership.jsx
+│       ├── MDsMessage.jsx
+│       ├── OrganizationStructure.jsx
+│       └── JointVentures.jsx
+├── services/
+│   ├── api/
+│   │   ├── knowledgeHub.js
+│   │   ├── csr.js
+│   │   └── governance.js
+│   └── utils/
+│       ├── axiosInstance.js
+│       ├── apiEndpoints.js
+│       └── formatData.js
+├── context/
+│   ├── UserContext.js
+│   └── ThemeContext.js
+├── hooks/
+│   ├── useFetch.js
+│   ├── useAuth.js
+│   └── useToggle.js
+├── routes/
+│   ├── AppRoutes.jsx
+│   └── ProtectedRoute.jsx
+├── config/
+│   ├── constants.js
+│   └── env.js
+├── App.jsx
+└── index.jsx

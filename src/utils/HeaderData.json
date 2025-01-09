@@ -1,0 +1,116 @@
+{
+    "contactList": [
+      { "type": "Helpline", "numbers": "+91 12345 67890" },
+      { "type": "Emergency", "numbers": "+91 98765 43210" }
+    ],
+    "menuItems": [
+        {
+          "title": "Knowledge Hub",
+          "links": [
+            "Benefits of Natural Gas",
+            "Gas Safety Tips",
+            "Energy Calculators",
+            "Safety Precautions"
+          ]
+        },
+        {
+          "title": "CSR Initiatives",
+          "links": [
+            "Our CSR Projects",
+            "CSR Annual Reports",
+            "CSR Policies"
+          ]
+        },
+        {
+          "title": "Governance",
+          "links": [
+            "Policies and Guidelines",
+            "Acts, Rules and Regulations",
+            "Code of Conduct",
+            "Citizen Charter",
+            "Certifications"
+          ]
+        },
+        {
+          "title": "Media Center",
+          "links": [
+            "Corporate Brochure",
+            "Press Releases",
+            "News and Events",
+            "Photo Gallery",
+            "Video Library",
+            "AGCL Corporate Song",
+            "AGCL Corporate Video",
+            "AGCL Logo & Flag"
+          ]
+        }
+      ],
+      
+    "additionalMenuData": [
+      {
+        "title": "About Us",
+        "links": [
+          "Who we are",
+          "Mission & Vision",
+          "Our Leadership",
+          "MD's Message",
+          "Organization Structure",
+          "Joint Ventures"
+        ]
+      },
+      {
+        "title": "Safety First",
+        "links": [
+          "Emergency Helpline",
+          "Safety Policies",
+          "Our Safety & Sustainability Approach",
+          "Gas Safety Guidelines",
+          "Call Before You Dig",
+          "Safety Awareness"
+        ]
+      },
+      {
+        "title": "Investors",
+        "links": [
+          "Financial Results"
+        ]
+      },
+      {
+        "title": "Vendors",
+        "links": [
+          "Current Tenders",
+          "Expression of Interest(EOI)",
+          "Tenders Portal",
+          "Vendor Policies",
+          "Tender Documents"
+        ]
+      },
+      {
+        "title": "Customer Zone",
+        "links": [
+          "Domestic Gas Services",
+          "Commercial Gas Services",
+          "Industrial Gas Services",
+          "Retail Fuel: MS, HSD & CNG"
+        ]
+      },
+      {
+        "title": "Career At AGCL",
+        "links": [
+          "Work With Us",
+          "Current Job Openings",
+          "Job Results",
+          "Internship Opportunities"
+        ]
+      },
+      {
+        "title": "Get In Touch",
+        "links": [
+          "Customer Care Numbers",
+          "Our Offices",
+          "FAQ & Feedback"
+        ]
+      }
+    ]
+  }
+  
