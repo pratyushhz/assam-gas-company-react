@@ -1,6 +1,6 @@
 import React from 'react';
 import headerData from '../../utils/headerData.json';
-
+import Logo from "../../assets/new-images/logo/Fw_ Company Logo/AGCL_Logo.png";
 const Header = () => {
   return (
     <header className="header header-layout1">
@@ -120,7 +120,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg sticky-navbar">
         <div className="container-fluid" style={{ paddingRight: 0 }}>
           <a className="navbar-brand" href="index.html">
-            <img src="assets/new-images/logo/Fw_ Company Logo/AGCL_Logo.png" className="logo" alt="logo" style={{ maxWidth: '240px' }} />
+            <img src={Logo} className="logo" alt="logo" style={{ maxWidth: '240px' }} />
           </a>
           <button className="navbar-toggler" type="button">
             <span className="menu-lines"><span></span></span>
