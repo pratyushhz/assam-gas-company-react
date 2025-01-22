@@ -1,7 +1,40 @@
 import React from 'react';
-import headerData from '../../utils/headerData.json';
+// import headerData from '../../utils/headerData.json';
 import Logo from "../../assets/new-images/logo/Fw_ Company Logo/AGCL_Logo.png";
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
 const Header = () => {
+
+  const [navItems, setNavItems] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchNavItems = async () => {
+      // try {
+        const response = await fetch('http://192.168.0.95/rmrc/public/api/header');
+        if (!response.ok) {
+          throw new Error('Failed to fetch navigation items');
+        }
+        const data = await response.json();
+        // setNavItems(data);
+        console.log(data)
+        // setIsLoading(false);
+      // } 
+      // catch (err) {
+      //   setError(err.message);
+      //   setIsLoading(false);
+      // }
+    };
+
+    fetchNavItems();
+  }, []);
+
+
+
+
+
   return (
     <header className="header header-layout1">
       <div className="header-topbar">
@@ -10,15 +43,15 @@ const Header = () => {
             <div className="col-12">
               <div className="d-flex align-items-center justify-content-between contact-container">
                 <ul className="contact__list d-flex flex-wrap align-items-center list-unstyled mb-0">
-                  {headerData.contactList.map((contact, index) => (
+                  {navItems.contactList.map((contact, index) => (
                     <li key={index} className="emergency-flex">
                       <div className="emergecy-scroll number-scroll">
                         <i className="icon-phone color-primary1"></i>
                         <span id="number-type" className="color-primary1">{contact.type}</span>
                       </div>
-                      <a href="#" id="number-display" className="color-primary1" style={{ color: 'floralwhite' }}>
+                      <Link to="#" id="number-display" className="color-primary1" style={{ color: 'floralwhite' }}>
                         {contact.numbers}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -26,33 +59,33 @@ const Header = () => {
                 <div className="d-flex align-items-center">
                   <ul className="igg-1 list-unstyled mb-0 mr-20">
                     <li style={{ borderRight: '1px solid #fff', paddingRight: '10px' }}>
-                      <a href="#">Screen Reader Access</a>
+                      <Link to="#">Screen Reader Access</Link>
                     </li>
                     <li style={{ borderRight: '1px solid #fff', paddingRight: '10px' }}>
-                      <a href="#">Skip to Main Content</a>
+                      <Link to="#">Skip to Main Content</Link>
                     </li>
                   </ul>
 
                   <div className="font-increase">
                     <button>
-                      <a href="#">A-</a>
+                      <Link to="#">A-</Link>
                     </button>
                     <button>
-                      <a href="#">A</a>
+                      <Link to="#">A</Link>
                     </button>
                     <button>
-                      <a href="#">A+</a>
+                      <Link to="#">A+</Link>
                     </button>
                   </div>
 
                   <ul className="social-icons list-unstyled mt-0">
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <i className="fab fa-facebook-f" style={{ background: '#1877F2', color: '#fff' }}></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <i
                           className="fab fa-instagram"
                           style={{
@@ -60,21 +93,21 @@ const Header = () => {
                             color: '#fff'
                           }}
                         ></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <i style={{ backgroundColor: '#fff' }}>
                           <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABjElEQVR4nN3VPUjWURQG8J+ZaZ8ihQUSWBBEDoHQIEQ0RRA21dBQQy1BUy65BA1RQ0OD5ODgIIEgGAQtuQgiQYNSSxQk0ncUERTUFnHhDoeX9/9/P5d64A7nuec+93Lvuc/hf8JG7K8y+utcvzXndxcldGABv7AWxmcM1BDvwTIeobMsMQl9xFDgxvLGHSUHu49VbFMHzmMFXTnegEVcLsi/jQ/YqwHM4XqIB/EJByryLuIHDmsQu/AORwJ3CU/CHR/P7zWqSaSFL7A5cPO4hkP4jitaxDTuhHgP3ucR+aaxI5fqscCdwbdcmm3BUbzG9sClsrypjbiLqRD3Yj1v3haM4Q9OBe4EXmJLq+KnczlexVvsDHP3MNGK+DB+4kKOb+BBmE+nf4WTzYgP5M+WRKPjPsW5wI3gDfoaEU8V8xyzVUzuYDbE6D23MFOveDK5x1gq8fZKh92EZzhbzwaTue6THxWhmsMO5StNv70Q4/iSO1MtDOJrRXP6jYdli/ZVlKEa2F3QZku72r+Fv+qxR15Nd7c9AAAAAElFTkSuQmCC"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABjElEQVR4nN3VPUjWURQG8J+ZaZ8ihQUSWBBEDoHQIEQ0RRA21dBQQy1BUy65BA1RQ0OD5ODgIIEgGAQtuQgiQYNSSxQk0ncUERTUFnHhDoeX9/9/P5d64A7nuec+93Lvuc/hf8JG7K8y+utcvzXndxcldGABv7AWxmcM1BDvwTIeobMsMQl9xFDgxvLGHSUHu49VbFMHzmMFXTnegEVcLsi/jQ/YqwHM4XqIB/EJByryLuIHDmsQu/LinkORwJ3CU/CHR/P7zWqSaSFL7A5cPO4hkP4jitaxDTuhHgP3ucR+aaxI5fqscCdwbdcmm3BUbzG9sClsrypjbiLqRD3Yj1v3haM4Q9OBe4EXmJLq+KnczlexVvsDHP3MNGK+DB+4kKOb+BBmE+nf4WTzYgP5M+WRKPjPsW5wI3gDfoaEU8V8xyzVUzuYDbE6D23MFOveDK5x1gq8fZKh92EZzhbzwaTue6THxWhmsMO5StNv70Q4/iSO1MtDOJrRXP6jYdli/ZVlKEa2F3QZku72r+Fv+qxR15Nd7c9AAAAAElFTkSuQmCC"
                             alt="twitterx--v2"
                             style={{ maxWidth: '22px' }}
                           />
                         </i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <i style={{ backgroundColor: '#fff' }}>
                           <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAACpUlEQVR4nO2aP2gUQRSHf4mQ2KiNkBSelkrsYiDk8uYWYpNCjCBXGs8mxCo2YqeJdqbQawSFCBFUiBos1YPYe0HRShIFQUEMWpxREk7MT/b+mJgmO7ezc2t2PnjNLXfzPma5mXnzAIfD4XA4HA6HIx5wEO3sx35m0EfBCSrkqHCOChNUyFNhigoztZilQmFTzG54PlX7znjtN05TYYhp9NBDpz0poKUyqMIoBVcpeESFV1RYogKthWCVgkUqPKfCNAVXKBip5Aa0mJFNo4eCN1bFGovXfq7hZAVZKpRjIBM0yn7Ojcl6OETBcgwkdF/7ZaZxUF9Y4X7Tk29c+q6eLNBKhe9NT7zxKDGLHTqzm4pB0uGiDwd0hDNNTzhsCI7qCOdikXS4GNURnjA6+I3z5ECb7Rme1BGeNjq4z6dF8mLWpvDj4MKCZ8aF6xQL5PBhG9JFnRmej0zY51eZfJAnB/dEKfxBR/h9pMJ1Sl/J/BjptUYh/FNH2OwpaCvezpNn0+alu9AWVLhkVdhnbY2cmyFPpsyNm8auYMKCFevCdVZ+kLfHyYH28ON62Bt0hn83TbiOiWXMw77/R/jjAnnhWLhxe9GRtFd6Z7z/tJ7cIYc6zYwpWA0ku42WpSUd4XdWhL99JidHotl4CBZ0hIt2tpa7zYuuC78ILix4Gunh4VRXdKLrUWju8dDEMhNVIY/bowBwOVklHsGZpBXxvGSVaRVSuoV4s7stu1HyHaADFe7FIHE7Vy2JvExL3HVpIi/EN0KF7kp7gd9mUG03mPM36MbPzlvHFwpeUvCw0n7ht2EodMMm7EUHBUeYwXH2Y5gZjFFwiYJrVLj5t2ml2hvyb1NL9bN6U8stCq5vaGrJVRpl/IYZf6kMWoV0OBwOh8PhcDgQOX8AhY5o3pQDUmoAAAAASUVORK5CYII="
@@ -82,7 +115,7 @@ const Header = () => {
                             style={{ maxWidth: '22px' }}
                           />
                         </i>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
 
@@ -99,15 +132,15 @@ const Header = () => {
                       <span>English</span>
                     </button>
                     <div className="dropdown-menu" aria-labelledby="langDropdown">
-                      <a className="dropdown-item" href="#">
+                      <Link to="/" className="dropdown-item" href="#">
                         <span>অসমীয়া</span>
-                      </a>
-                      <a className="dropdown-item" href="#">
+                      </Link>
+                      <Link to="/" className="dropdown-item" href="#">
                         <span>हिंदी</span>
-                      </a>
-                      <a className="dropdown-item" href="#">
+                      </Link>
+                      <Link to="/" className="dropdown-item" href="#">
                         <span>বাংলা</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -119,23 +152,23 @@ const Header = () => {
 
       <nav className="navbar navbar-expand-lg sticky-navbar">
         <div className="container-fluid" style={{ paddingRight: 0 }}>
-          <a className="navbar-brand" href="index.html">
+          <Link to="/" className="navbar-brand" href="index.html">
             <img src={Logo} className="logo" alt="logo" style={{ maxWidth: '240px' }} />
-          </a>
+          </Link>
           <button className="navbar-toggler" type="button">
             <span className="menu-lines"><span></span></span>
           </button>
 
           <div className="collapse navbar-collapse" id="mainNavigation">
             <ul className="top-menu-bar">
-              {headerData.menuItems.map((menu, index) => (
+              {navItems.menuItems.map((menu, index) => (
                 <li className="nav__item has-dropdown" key={index}>
-                  <a href="javascript:void(0)" className="nav__item-link">{menu.title}</a>
+                  <Link to="javascript:void(0)" className="nav__item-link">{menu.title}</Link>
                   <button className="dropdown-toggle" data-toggle="dropdown"></button>
                   <ul className="dropdown-menu">
                     {menu.links.map((link, idx) => (
                       <li className="nav__item" key={idx}>
-                        <a href="javascript:void(0)" className="nav__item-link">{link}</a>
+                        <Link to="javascript:void(0)" className="nav__item-link">{link.title}</Link>
                       </li>
                     ))}
                   </ul>
@@ -145,14 +178,14 @@ const Header = () => {
 
             {/* Additional static menu */}
             <ul className="navbar-nav">
-              {headerData.additionalMenuData.map((menu, index) => (
+              {navItems.additionalMenuData.map((menu, index) => (
                 <li className="nav__item has-dropdown" key={index}>
-                  <a href="javascript:void(0)" className="nav__item-link">{menu.title}</a>
+                  <Link to="javascript:void(0)" className="nav__item-link">{menu.title}</Link>
                   <button className="dropdown-toggle" data-toggle="dropdown"></button>
                   <ul className="dropdown-menu">
                     {menu.links.map((subItem, idx) => (
                       <li className="nav__item" key={idx}>
-                        <a href="javascript:void(0)" className="nav__item-link">{subItem}</a>
+                        <Link to={subItem.path} className="nav__item-link">{subItem.title}</Link>
                       </li>
                     ))}
                   </ul>

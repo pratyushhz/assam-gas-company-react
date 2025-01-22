@@ -7,6 +7,8 @@ import CurrentUpdates from "../../components/homepage/CurrentUpdates";
 import CustomerSection from "../../components/homepage/CustomerSection";
 import AGCLInAction from "../../components/homepage/AGCLInAction";
 import Certifications from "../../components/homepage/Certifications";
+import RemarkableLegacy from "../../components/homepage/RemarkableLegacy";
+import Partners from "../../components/homepage/Partners";
 const Home = () => {
   return (
     <div>
@@ -18,6 +20,8 @@ const Home = () => {
       <CustomerSection/>
       <AGCLInAction/>
       <Certifications/>
+      <RemarkableLegacy/>
+      <Partners/>
     </div>
   );
 };
