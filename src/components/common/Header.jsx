@@ -6,32 +6,22 @@ import { useState, useEffect } from 'react';
 
 const Header = () => {
 
-  const [navItems, setNavItems] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [navItems, setNavItems] = useState({ contactList:[], menuItems: [], additionalMenuData: [] });
 
   useEffect(() => {
     const fetchNavItems = async () => {
-      // try {
+      try {
         const response = await fetch('http://192.168.0.95/rmrc/public/api/header');
-        if (!response.ok) {
-          throw new Error('Failed to fetch navigation items');
-        }
         const data = await response.json();
-        // setNavItems(data);
-        console.log(data)
-        // setIsLoading(false);
-      // } 
-      // catch (err) {
-      //   setError(err.message);
-      //   setIsLoading(false);
-      // }
+        console.log(data); 
+        setNavItems(data);
+      } catch (error) {
+        console.error("Error fetching nav items:", error);
+      }
     };
 
     fetchNavItems();
   }, []);
-
-
 
 
 
@@ -151,50 +141,58 @@ const Header = () => {
       </div>
 
       <nav className="navbar navbar-expand-lg sticky-navbar">
-        <div className="container-fluid" style={{ paddingRight: 0 }}>
-          <Link to="/" className="navbar-brand" href="index.html">
-            <img src={Logo} className="logo" alt="logo" style={{ maxWidth: '240px' }} />
-          </Link>
-          <button className="navbar-toggler" type="button">
-            <span className="menu-lines"><span></span></span>
-          </button>
+      <div className="container-fluid" style={{ paddingRight: 0 }}>
+        <Link to="/" className="navbar-brand">
+          <img src={Logo} className="logo" alt="logo" style={{ maxWidth: '240px' }} />
+        </Link>
+        <button className="navbar-toggler" type="button">
+          <span className="menu-lines"><span></span></span>
+        </button>
 
-          <div className="collapse navbar-collapse" id="mainNavigation">
-            <ul className="top-menu-bar">
-              {navItems.menuItems.map((menu, index) => (
-                <li className="nav__item has-dropdown" key={index}>
-                  <Link to="javascript:void(0)" className="nav__item-link">{menu.title}</Link>
-                  <button className="dropdown-toggle" data-toggle="dropdown"></button>
-                  <ul className="dropdown-menu">
-                    {menu.links.map((link, idx) => (
-                      <li className="nav__item" key={idx}>
-                        <Link to="javascript:void(0)" className="nav__item-link">{link.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
+        <div className="collapse navbar-collapse" id="mainNavigation">
+          <ul className="top-menu-bar">
+            {navItems.menuItems.map((menu, index) => (
+              <li className="nav__item has-dropdown" key={index}>
+                <Link to="javascript:void(0)" className="nav__item-link">{menu.title}</Link>
+                {menu.links && menu.links.length > 0 && (
+                  <>
+                    <button className="dropdown-toggle" data-toggle="dropdown"></button>
+                    <ul className="dropdown-menu">
+                      {menu.links.map((link, idx) => (
+                        <li className="nav__item" key={idx}>
+                          <Link to={link.path} className="nav__item-link">{link.title}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
 
-            {/* Additional static menu */}
-            <ul className="navbar-nav">
-              {navItems.additionalMenuData.map((menu, index) => (
-                <li className="nav__item has-dropdown" key={index}>
-                  <Link to="javascript:void(0)" className="nav__item-link">{menu.title}</Link>
-                  <button className="dropdown-toggle" data-toggle="dropdown"></button>
-                  <ul className="dropdown-menu">
-                    {menu.links.map((subItem, idx) => (
-                      <li className="nav__item" key={idx}>
-                        <Link to={subItem.path} className="nav__item-link">{subItem.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Additional static menu */}
+          <ul className="navbar-nav">
+            {navItems.additionalMenuData.map((menu, index) => (
+              <li className="nav__item has-dropdown" key={index}>
+                <Link to="javascript:void(0)" className="nav__item-link">{menu.title}</Link>
+                {menu.links && menu.links.length > 0 && (
+                  <>
+                    <button className="dropdown-toggle" data-toggle="dropdown"></button>
+                    <ul className="dropdown-menu">
+                      {menu.links.map((subItem, idx) => (
+                        <li className="nav__item" key={idx}>
+                          <Link to={subItem.path} className="nav__item-link">{subItem.title}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
     </header>
   );
 };
