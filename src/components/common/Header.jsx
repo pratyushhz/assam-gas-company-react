@@ -1,5 +1,4 @@
 import React from 'react';
-// import headerData from '../../utils/headerData.json';
 import Logo from "../../assets/new-images/logo/Fw_ Company Logo/AGCL_Logo.png";
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
