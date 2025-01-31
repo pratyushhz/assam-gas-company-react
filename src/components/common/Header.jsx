@@ -10,15 +10,14 @@ const Header = () => {
   useEffect(() => {
     const fetchNavItems = async () => {
       try {
-        const response = await fetch('http://192.168.0.95/rmrc/public/api/header');
+        const response = await fetch('http://167.71.235.8/agcl/public/api/home');
         const data = await response.json();
-        console.log(data); 
         setNavItems(data);
       } catch (error) {
         console.error("Error fetching nav items:", error);
       }
     };
-
+    
     fetchNavItems();
   }, []);
 

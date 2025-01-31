@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-
 const Description = ({ title, paragraphs }) => {
   return (
     <section className="pt-0 pb-0 who-we-are">
