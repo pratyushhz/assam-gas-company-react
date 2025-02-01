@@ -1,5 +1,7 @@
 import React from 'react';
 import Img from "../../assets/new-images/about-us-img.jpg"
+
+
 const AboutCompany = () => {
   return (
     <section className="about-layout1 pt-60 pb-60">

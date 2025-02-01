@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
 const CounterUp = () => {
-  const counters = [
-    { value: 500, unit: "+", description: "Industrial consumers" },
-    { value: 1200, unit: "+", description: "Commercial establishments" },
-    { value: 50, unit: "K+", description: "Domestic consumers" },
-    { value: 100, unit: "+", description: "Retail Outlet" },
-  ];
+  const [counters, setCounters] = useState(null);
+
+  useEffect(() => {
+    fetch("http://167.71.235.8/agcl/public/api/home")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.counter)
+        setCounters([
+          { value: data.counter.industrial_consumers, unit: "+", description: "Industrial consumers" },
+          { value: data.counter.commercial_establishments, unit: "+", description: "Commercial establishments" },
+          { value: data.counter.domestic_consumers, unit: "K+", description: "Domestic consumers" },
+          { value: data.counter.retail_outlet, unit: "+", description: "Retail Outlet" },
+        ]);
+      })
+      .catch((error) => console.error("Error fetching counter data:", error));
+  }, []);
+
+  if (!counters) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <section className="counters pt-0 pb-60">

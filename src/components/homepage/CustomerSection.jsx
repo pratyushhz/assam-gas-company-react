@@ -1,6 +1,6 @@
 import React from "react";
-import CustomerUpdates from "../CustomerUpdates";
 import CustomerServices from "../CustomerServices";
+import CustomerUpdates from "../CustomerUpdates";
 
 
 const CustomerSection = () => {

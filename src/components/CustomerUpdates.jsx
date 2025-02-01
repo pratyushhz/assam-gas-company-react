@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import CustomerUpdateBg from "../assets/new-images/about-us-img.jpg"
 
-
 const CustomerUpdates = () => {
+  const [updates, setUpdates] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://167.71.235.8/agcl/public/api/home")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.customer_updates)
+        setUpdates(data.customer_updates);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching customer updates:", error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className="col-sm-12 col-md-12 col-lg-4">
       <div className="customer-service-section-2">
@@ -26,26 +42,25 @@ const CustomerUpdates = () => {
             </h3>
             <div className="marquee-container">
               <div className="marquee">
-                <ul className="imp-updates list-unstyled">
-                  {[
-                    "Lorem ipsum dolor sit amet consectetur.",
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, illo.",
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, illo.",
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, illo.",
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, illo.",
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, illo.",
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, illo.",
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, illo.",
-                  ].map((update, index) => (
-                    <li key={index}>
-                      <a href="#">
-                        <i className="icon-arrow-right"></i>{" "}
-                        <span>{update}</span>
-                      </a>
-                      <hr />
-                    </li>
-                  ))}
-                </ul>
+                {loading ? (
+                  <p>Loading updates...</p>
+                ) : (
+                  <ul className="imp-updates list-unstyled">
+                    {updates.map((update) => (
+                      <li key={update.id}>
+                        <a
+                          href={update.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="icon-arrow-right"></i>{" "}
+                          <span>{update.description}</span>
+                        </a>
+                        <hr />
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
             <a
@@ -59,7 +74,7 @@ const CustomerUpdates = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CustomerUpdates
+export default CustomerUpdates;

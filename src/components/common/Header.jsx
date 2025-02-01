@@ -2,6 +2,8 @@ import React from 'react';
 import Logo from "../../assets/new-images/logo/Fw_ Company Logo/AGCL_Logo.png";
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import twitterLogo from "../../assets/icons/icons8-twitter-30.png"
+import youTubeLogo from "../../assets/icons/icons8-youtube-30.png"
 
 const Header = () => {
 
@@ -86,10 +88,7 @@ const Header = () => {
                     <li>
                       <Link to="#">
                         <i style={{ backgroundColor: '#fff' }}>
-                          <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABjElEQVR4nN3VPUjWURQG8J+ZaZ8ihQUSWBBEDoHQIEQ0RRA21dBQQy1BUy65BA1RQ0OD5ODgIIEgGAQtuQgiQYNSSxQk0ncUERTUFnHhDoeX9/9/P5d64A7nuec+93Lvuc/hf8JG7K8y+utcvzXndxcldGABv7AWxmcM1BDvwTIeobMsMQl9xFDgxvLGHSUHu49VbFMHzmMFXTnegEVcLsi/jQ/YqwHM4XqIB/EJByryLuIHDmsQu/LinkORwJ3CU/CHR/P7zWqSaSFL7A5cPO4hkP4jitaxDTuhHgP3ucR+aaxI5fqscCdwbdcmm3BUbzG9sClsrypjbiLqRD3Yj1v3haM4Q9OBe4EXmJLq+KnczlexVvsDHP3MNGK+DB+4kKOb+BBmE+nf4WTzYgP5M+WRKPjPsW5wI3gDfoaEU8V8xyzVUzuYDbE6D23MFOveDK5x1gq8fZKh92EZzhbzwaTue6THxWhmsMO5StNv70Q4/iSO1MtDOJrRXP6jYdli/ZVlKEa2F3QZku72r+Fv+qxR15Nd7c9AAAAAElFTkSuQmCC"
-                            alt="twitterx--v2"
-                            style={{ maxWidth: '22px' }}
+                          <img src={twitterLogo} style={{ maxWidth: '22px' }}
                           />
                         </i>
                       </Link>
@@ -97,8 +96,7 @@ const Header = () => {
                     <li>
                       <Link to="#">
                         <i style={{ backgroundColor: '#fff' }}>
-                          <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAACpUlEQVR4nO2aP2gUQRSHf4mQ2KiNkBSelkrsYiDk8uYWYpNCjCBXGs8mxCo2YqeJdqbQawSFCBFUiBos1YPYe0HRShIFQUEMWpxREk7MT/b+mJgmO7ezc2t2PnjNLXfzPma5mXnzAIfD4XA4HA6HIx5wEO3sx35m0EfBCSrkqHCOChNUyFNhigoztZilQmFTzG54PlX7znjtN05TYYhp9NBDpz0poKUyqMIoBVcpeESFV1RYogKthWCVgkUqPKfCNAVXKBip5Aa0mJFNo4eCN1bFGovXfq7hZAVZKpRjIBM0yn7Ojcl6OETBcgwkdF/7ZaZxUF9Y4X7Tk29c+q6eLNBKhe9NT7zxKDGLHTqzm4pB0uGiDwd0hDNNTzhsCI7qCOdikXS4GNURnjA6+I3z5ECb7Rme1BGeNjq4z6dF8mLWpvDj4MKCZ8aF6xQL5PBhG9JFnRmej0zY51eZfJAnB/dEKfxBR/h9pMJ1Sl/J/BjptUYh/FNH2OwpaCvezpNn0+alu9AWVLhkVdhnbY2cmyFPpsyNm8auYMKCFevCdVZ+kLfHyYH28ON62Bt0hn83TbiOiWXMw77/R/jjAnnhWLhxe9GRtFd6Z7z/tJ7cIYc6zYwpWA0ku42WpSUd4XdWhL99JidHotl4CBZ0hIt2tpa7zYuuC78ILix4Gunh4VRXdKLrUWju8dDEMhNVIY/bowBwOVklHsGZpBXxvGSVaRVSuoV4s7stu1HyHaADFe7FIHE7Vy2JvExL3HVpIi/EN0KF7kp7gd9mUG03mPM36MbPzlvHFwpeUvCw0n7ht2EodMMm7EUHBUeYwXH2Y5gZjFFwiYJrVLj5t2ml2hvyb1NL9bN6U8stCq5vaGrJVRpl/IYZf6kMWoV0OBwOh8PhcDgQOX8AhY5o3pQDUmoAAAAASUVORK5CYII="
+                          <img src= {youTubeLogo}
                             alt="youtube-play"
                             style={{ maxWidth: '22px' }}
                           />

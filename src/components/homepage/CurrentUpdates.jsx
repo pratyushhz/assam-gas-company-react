@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CurrentUpdates = () => {
-  const updates = [
-    "Update 1: New management policy announced.",
-    "Update 2: Safety measures strengthened for employees.",
-    "Update 3: Expansion plans for 2024 confirmed.",
-    "Update 4: Employee awards ceremony held successfully.",
-  ];
+  const [updates, setUpdates] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://167.71.235.8/agcl/public/api/home")
+      .then((response) => response.json())
+      .then((data) => {
+        setUpdates(data.current_updates);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching updates:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const quickLinks = ["Link 1", "Link 2", "Link 3"];
 
@@ -20,23 +30,29 @@ const CurrentUpdates = () => {
               <i className="icon-pause"></i>
             </button>
             <div className="scrolling-news marquee1">
-              <ul className="news-list">
-                {updates.map((update, index) => (
-                  <li key={index}>
-                    <a href="#">{update}</a>
-                  </li>
-                ))}
-              </ul>
+              {loading ? (
+                <p>Loading updates...</p>
+              ) : (
+                <ul className="news-list">
+                  {updates.map((update) => (
+                    <li key={update.id}>
+                      <Link to={update.link} target="_blank" rel="noopener noreferrer">
+                        {update.description}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <a href="#" className="view-all">
+            <Link to="#" className="view-all">
               View All <i className="icon-arrow-right"></i>
-            </a>
+            </Link>
             <div className="quick-links-dropdown">
               <button className="dropdown-toggle">Quick Links</button>
               <ul className="quick-links-dropdown-menu">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href="#">{link}</a>
+                    <Link to="#">{link}</Link>
                   </li>
                 ))}
               </ul>
