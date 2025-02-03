@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+// import React from "react";
 import { Link } from "react-router-dom";
 
 const VerticalCategory = ({ verticalCategoryData }) => {
@@ -7,7 +8,7 @@ const VerticalCategory = ({ verticalCategoryData }) => {
   return (
     <div className="feature-item">
       <div className="services-img">
-        <img src={verticalCategoryData.img} alt={verticalCategoryData.title} />
+        <img src={verticalCategoryData.image} alt={verticalCategoryData.title} />
       </div>
       <div className="banner-bottom-slider-content">
         <h4 className="feature__title">{verticalCategoryData.title}</h4>

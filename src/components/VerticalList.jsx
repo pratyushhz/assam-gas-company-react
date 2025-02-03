@@ -1,19 +1,76 @@
-import React from 'react'
-import Vertical from './Vertical'
+import Slider from "react-slick";
+import Vertical from "./Vertical";
+import useFetchHomeAPI from "../hooks/useFetchHomeAPI"
+import "slick-carousel/slick/slick.css";
 
 const VerticalList = () => {
+  const { verticals, loading, error } = useFetchHomeAPI();
+  console.log(verticals)
 
-    
+  const settings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error loading data</p>;
+
   return (
-    <div class="row">
-        <div class="col-12">
-            <div class="slick-carousel carousel-arrows-light"
-            data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "arrows": true, "dots": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2, "slidesToScroll": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 1, "slidesToScroll": 1}}]}'>
-                <Vertical/>
-            </div>
+    <section className="services-layout2 pt-120 certificate-main-container">
+      <div className="bg-img">
+        <img src="assets/images/backgrounds/5.jpg" alt="background" />
+      </div>
+      <div className="container">
+        <div className="row mb-70">
+          <div className="col-12">
+            <h2 className="heading__subtitle color-primary">Verticals</h2>
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-5">
+            <h3 className="heading__title color-white">Our Verticals</h3>
+          </div>
         </div>
-    </div>
-  )
-}
 
-export default VerticalList
+        <div className="row">
+          <div className="col-12">
+            <Slider {...settings} className="slick-carousel carousel-arrows-light">
+              {verticals.map((vertical) => (
+                <Vertical key={vertical.id} {...vertical} />
+              ))}
+            </Slider>
+          </div>
+        </div>
+
+        <div className="row mt-4">
+          <div className="col-sm-12 col-md-12 col-lg-5">
+            <a href="request-quote.html" className="btn btn__primary btn__primary-style2 mr-30">
+              <i className="icon-arrow-right"></i>
+              <span>View All</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default VerticalList;

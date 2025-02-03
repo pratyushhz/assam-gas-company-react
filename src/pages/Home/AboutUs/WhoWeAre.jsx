@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../../../components/common/Banner'
 import Description from '../../../components/Description';
 import CounterUp from '../../../components/homepage/CounterUp';
+import VerticalList from '../../../components/VerticalList';
 
 const WhoWeAre = () => {
 
@@ -40,6 +41,8 @@ const WhoWeAre = () => {
           <Description title={descriptionData.title} paragraphs={descriptionData.paragraphs}/>
       </div>
       <CounterUp/>
+
+      <VerticalList/>
     </>
   )
 }

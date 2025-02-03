@@ -1,22 +1,22 @@
-import React from 'react'
+// import React from 'react';
 
-const Vertical = () => {
+// eslint-disable-next-line react/prop-types
+const Vertical = ({ title, description, image, link }) => {
   return (
     <div className="service-item">
-        <div className="service__img">
-            <img src="https://assamgas.org/index_files/vlb_images1/26022024/public_meeting/public_meeting7.jpg"
-            alt="service" loading="lazy" />
-        </div>
-        <div className="service__body">
-            <h4 className="service__title">Gas Transmission</h4>
-            <p className="service__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sequi!</p>
-            <a href="services-single-service.html" className="btn btn__secondary btn__outlined btn__custom">
-            <span>Read More</span>
-            <i className="icon-arrow-right"></i>
-            </a>
-        </div>
+      <div className="service__img">
+        <img src={image} alt={title} loading="lazy" />
+      </div>
+      <div className="service__body">
+        <h4 className="service__title">{title}</h4>
+        <p className="service__desc">{description}</p>
+        <a href={link} className="btn btn__secondary btn__outlined btn__custom">
+          <span>Read More</span>
+          <i className="icon-arrow-right"></i>
+        </a>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Vertical
+export default Vertical;
