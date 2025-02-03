@@ -1,6 +1,5 @@
 import React from "react";
 import HeroSlider from "../../components/homepage/HeroSlider";
-import Services from "../../components/homepage/Services";
 import AboutCompany from "../../components/homepage/AboutCompany";
 import CounterUp from "../../components/homepage/CounterUp";
 import CurrentUpdates from "../../components/homepage/CurrentUpdates";
@@ -9,11 +8,13 @@ import AGCLInAction from "../../components/homepage/AGCLInAction";
 import Certifications from "../../components/homepage/Certifications";
 import RemarkableLegacy from "../../components/homepage/RemarkableLegacy";
 import Partners from "../../components/homepage/Partners";
+import VerticalCategoryList from "../../components/VerticalCategoryList";
+
 const Home = () => {
   return (
     <div>
       <HeroSlider />
-      <Services />
+      <VerticalCategoryList/>
       <AboutCompany />
       <CounterUp />
       <CurrentUpdates />

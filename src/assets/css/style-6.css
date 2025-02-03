@@ -1019,12 +1019,13 @@ select {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-color: rgba(27, 26, 26, 0.15);
+  background-color: rgba(27, 26, 26, 0.4);
 }
 
 .bg-overlay-2:before {
   /* background-color: rgba(27, 26, 26, 0.25); */
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: -1!important;
 }
 
 .bg-overlay-3:before {
@@ -4558,12 +4559,17 @@ textarea.form-control {
 
 .slider .slide__title {
   font-weight: 700;
-  font-size: 60px;
+  /* font-size: 60px; */
+  font-size: 46px;
   line-height: 1.1;
   color: #ffffff;
   margin-bottom: 20px;
 }
-
+@media(min-width:1560px) {
+  .slider .slide__title {
+    font-size: 60px;
+  }
+}
 .slider .slide__desc {
   font-size: 17px;
   line-height: 1.5;
@@ -4581,7 +4587,7 @@ textarea.form-control {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   top: 46%;
-  display: flex;
+  display: flex!important;
   flex-direction: column;
 }
 

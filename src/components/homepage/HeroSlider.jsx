@@ -13,12 +13,12 @@ const HeroSlider = () => {
       try {
         const response = await fetch("http://167.71.235.8/agcl/public/api/home");
         const data = await response.json();
-        console.log("API Response Data:", data);  // Log the entire API response
+        console.log("API Response Data:", data);
   
         // Directly set the banner data if it's available
         if (data.banner && data.banner.length > 0) {
           setSliderData(data.banner);
-          console.log("Slider Data:", data.banner);  // Log the actual banner data
+          console.log("Slider Data:", data.banner);
         } else {
           console.error("No banner data available.");
         }
@@ -36,7 +36,7 @@ const HeroSlider = () => {
     // Apply background images to slides
     slideRefs.current.forEach((el, index) => {
       if (el && sliderData[index]) {
-        const imageUrl = `url(http://167.71.235.8/agcl/public${sliderData[index].backgroundImage})`; // Ensure full URL
+        const imageUrl = `url(http://167.71.235.8/agcl/public${sliderData[index].backgroundImage})`;
         el.style.backgroundImage = imageUrl;
         el.style.backgroundSize = "cover";
         el.style.backgroundPosition = "center";
@@ -75,7 +75,7 @@ const HeroSlider = () => {
     speed: 700,
     fade: true,
     cssEase: "linear",
-    afterChange: handleAfterChange, // Trigger animation on slide change
+    afterChange: handleAfterChange,
   };
 
   return (
@@ -84,7 +84,7 @@ const HeroSlider = () => {
         {sliderData.map((slide, index) => (
           <div
             key={slide.id}
-            className="slide-item align-v-h bg-overlay bg-overlay-2"
+            className="slide-item align-v-h bg-overlay"
             ref={(el) => (slideRefs.current[index] = el)}
           >
             <div className="container">
