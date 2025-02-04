@@ -3,6 +3,8 @@ import Banner from '../../../components/common/Banner'
 import Description from '../../../components/Description';
 import CounterUp from '../../../components/homepage/CounterUp';
 import VerticalList from '../../../components/VerticalList';
+import ColorGridWhoWeAre from '../../../services/ColorGridWhoWeAre';
+import OurInfrastructure from '../../../components/OurInfrastructure';
 
 const WhoWeAre = () => {
 
@@ -40,9 +42,10 @@ const WhoWeAre = () => {
       <div className="pt-60 pb-60">
           <Description title={descriptionData.title} paragraphs={descriptionData.paragraphs}/>
       </div>
+      <ColorGridWhoWeAre/>
       <CounterUp/>
-
       <VerticalList/>
+      <OurInfrastructure/>
     </>
   )
 }

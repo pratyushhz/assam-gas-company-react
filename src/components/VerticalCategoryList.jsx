@@ -4,8 +4,8 @@ import Slider from "react-slick";
 import useFetchHomeAPI from "../hooks/useFetchHomeAPI"
 
 const VerticalCategoryList = () => {
-  const { verticals, loading, error } = useFetchHomeAPI();
-  console.log(verticals)
+  const { subverticals, loading, error } = useFetchHomeAPI();
+  console.log("SubVertical:", subverticals)
 
   const settings = {
     slidesToShow: 4,
@@ -38,7 +38,7 @@ const VerticalCategoryList = () => {
     <section className="features-layout4 py-0 banner-bottom-slider" style={{ position: "relative", zIndex: 10 }}>
       <div className="container">
         <Slider {...settings}>
-          {verticals.map((feature, index) => (
+          {subverticals.map((feature, index) => (
             <VerticalCategory verticalCategoryData={feature} key={index} />
           ))}
         </Slider>

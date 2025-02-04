@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import Vertical from "./Vertical";
 import useFetchHomeAPI from "../hooks/useFetchHomeAPI"
-import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick.css";
 
 const VerticalList = () => {
   const { verticals, loading, error } = useFetchHomeAPI();
@@ -36,10 +36,10 @@ const VerticalList = () => {
   if (error) return <p>Error loading data</p>;
 
   return (
-    <section className="services-layout2 pt-120 certificate-main-container">
-      <div className="bg-img">
+    <section className="services-layout2 pt-120 certificate-main-container" style={{background:"#272b6f"}}>
+      {/* <div className="bg-img">
         <img src="assets/images/backgrounds/5.jpg" alt="background" />
-      </div>
+      </div> */}
       <div className="container">
         <div className="row mb-70">
           <div className="col-12">

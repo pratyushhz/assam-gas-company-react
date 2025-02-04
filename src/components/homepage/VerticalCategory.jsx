@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 
 const VerticalCategory = ({ verticalCategoryData }) => {
-  // console.log("Props received in VerticalCategory:", verticalCategoryData );
+  console.log("Props received in Subverticals:", verticalCategoryData );
 
   return (
     <div className="feature-item">
@@ -12,7 +12,7 @@ const VerticalCategory = ({ verticalCategoryData }) => {
       </div>
       <div className="banner-bottom-slider-content">
         <h4 className="feature__title">{verticalCategoryData.title}</h4>
-        <p className="feature__desc">{verticalCategoryData.desc}</p>
+        <p className="feature__desc">{verticalCategoryData.shortDescription}</p>
         <Link to="#" className="btn__link">
           <i className="icon-arrow-right icon-filled"></i>
           <span>Explore More</span>

@@ -11287,14 +11287,11 @@ hr {
   flex-direction: column;
 }
 .emergecy-scroll {
-  background: #272b6f;
-  color: #fff;
+  background: #fff;
+  color: red;
   padding: 2px 6px;
   margin-right: 10px;
   border-radius: 16px;
-}
-.emergency-flex .icon-color {
-  color: darkorange;
 }
 .number-scroll {
   display: flex;

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import twitterLogo from "../../assets/icons/icons8-twitter-30.png"
 import youTubeLogo from "../../assets/icons/icons8-youtube-30.png"
+import { MdPhone } from "react-icons/md";
 
 const Header = () => {
 
@@ -36,7 +37,8 @@ const Header = () => {
                   {navItems.contactList.map((contact, index) => (
                     <li key={index} className="emergency-flex">
                       <div className="emergecy-scroll number-scroll">
-                        <i className="icon-phone color-primary1"></i>
+                        {/* <i className="icon-phone color-primary1"></i> */}
+                        <MdPhone className="icon-color color-primary1" />
                         <span id="number-type" className="color-primary1">{contact.type}</span>
                       </div>
                       <Link to="#" id="number-display" className="color-primary1" style={{ color: 'floralwhite' }}>

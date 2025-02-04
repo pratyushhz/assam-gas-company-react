@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const useFetchHomeAPI = () => {
   const [verticals, setVerticals] = useState([]);
+  const [subverticals, setSubverticals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -10,26 +11,30 @@ const useFetchHomeAPI = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data && data.verticals) {
-          const formattedData = data.verticals.flatMap((vertical) => {
-            const subverticals = vertical.subverticals || [];
-            return [
-              {
-                id: vertical.id,
-                title: vertical.name.replace("/", ""),
-                description: vertical.short_description || "No description available",
-                image: `http://167.71.235.8/agcl/public/${vertical.image}`,
-                link: `/vertical/${vertical.slug}`,
-              },
-              ...subverticals.map((sub) => ({
-                id: sub.id,
-                title: sub.name.replace("/", ""),
-                description: sub.short_description || "No description available",
-                image: `http://167.71.235.8/agcl/public/${sub.image}`,
-                link: sub.link || `/vertical/${vertical.slug}/${sub.slug}`,
-              })),
-            ];
-          });
-          setVerticals(formattedData);
+          // Extract verticals only
+          const verticalData = data.verticals.map((vertical) => ({
+            id: vertical.id,
+            title: vertical.name.replace("/", ""),
+            shortDescription: vertical.short_description || "No short description available",
+            longDescription: vertical.long_description || "No long description available",
+            image: `http://167.71.235.8/agcl/public/${vertical.image}`,
+            link: `/vertical/${vertical.slug}`,
+          }));
+
+          // Extract subverticals separately
+          const subverticalData = data.verticals.flatMap((vertical) =>
+            (vertical.subverticals || []).map((sub) => ({
+              id: sub.id,
+              title: sub.name.replace("/", ""),
+              shortDescription: sub.short_description || "No short description available",
+              longDescription: sub.long_description || "No long description available",
+              image: `http://167.71.235.8/agcl/public/${sub.image}`,
+              link: sub.link || `/vertical/${vertical.slug}/${sub.slug}`,
+            }))
+          );
+
+          setVerticals(verticalData);
+          setSubverticals(subverticalData);
         }
       })
       .catch((error) => {
@@ -39,7 +44,7 @@ const useFetchHomeAPI = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return { verticals, loading, error };
+  return { verticals, subverticals, loading, error };
 };
 
 export default useFetchHomeAPI;
