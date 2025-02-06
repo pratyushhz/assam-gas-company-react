@@ -1511,6 +1511,7 @@ h6 {
 .btn__primary .icon-arrow-left {
   color: #4aab3d;
   background-color: #ffffff;
+  padding:6px;
 }
 
 .btn__primary:hover {
@@ -1854,6 +1855,7 @@ h6 {
   background-color: #1b1a1a;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  padding: 6px;
 }
 
 .btn__secondary.btn__outlined.btn__custom:before {
@@ -1922,6 +1924,7 @@ h6 {
 }
 .new-btn-style.btn__primary.btn__outlined.btn__custom .icon-arrow-right{
     color: #4aab3d;
+    padding: 6px;
 }
 .new-btn-style.btn__primary.btn__outlined.btn__custom::after {
     background-color: #fff;
@@ -4456,7 +4459,7 @@ textarea.form-control {
 }
 
 .slick-arrow.slick-next:before, .slick-arrow.slick-prev:before {
-  font-family: 'icomoon';
+  /* font-family: 'icomoon'; */
   font-size: 45px;
 }
 
@@ -4464,17 +4467,17 @@ textarea.form-control {
   right: 0;
 }
 
-.slick-arrow.slick-next:before {
+/* .slick-arrow.slick-next:before {
   content: "\e93b";
-}
+} */
 
 .slick-arrow.slick-prev {
   left: 0;
 }
 
-.slick-arrow.slick-prev:before {
+/* .slick-arrow.slick-prev:before {
   content: "\e939";
-}
+} */
 
 .carousel-arrows-light .slick-arrow {
   color: white;
@@ -5166,6 +5169,7 @@ textarea.form-control {
 .features-layout5 .feature-item .btn__link .icon-filled {
   color: #ffffff;
   background-color: #4aab3d;
+  padding: 4px;
 }
 
 .features-layout4 .feature-item .btn__link span,
@@ -11121,10 +11125,11 @@ hr {
 }
 
 .swiper-slide .slide-content h2 {
-  font-size: 34px;
+  font-size: 28px;
   margin: 5px 0;
   font-weight: 700;
   color: #fff;
+  line-height: 36px;
 }
 
 .swiper-slide .slide-content p {
@@ -12015,10 +12020,26 @@ ol li {
   color: #fff;
 }
 
+
+
 /* Fourth child */
 .the-grid li:nth-child(4) .figcaption {
   background: darkgreen;
   color: #fff;
+}
+.banner-layout2.agcl_in_action .slide {
+  height:380px;
+}
+.banner-layout2.agcl_in_action::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {

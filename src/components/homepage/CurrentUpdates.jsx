@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const CurrentUpdates = () => {
   const [updates, setUpdates] = useState([]);
@@ -34,10 +35,10 @@ const CurrentUpdates = () => {
                 <p>Loading updates...</p>
               ) : (
                 <ul className="news-list">
-                  {updates.map((update) => (
+                  {updates.map((update, index) => (
                     <li key={update.id}>
-                      <Link to={update.link} target="_blank" rel="noopener noreferrer">
-                        {update.description}
+                      <Link to={update.link} target="_blank" rel="noopener">
+                      Update {index + 1} : {update.title}
                       </Link>
                     </li>
                   ))}
@@ -45,14 +46,14 @@ const CurrentUpdates = () => {
               )}
             </div>
             <Link to="#" className="view-all">
-              View All <i className="icon-arrow-right"></i>
+              View All <FaArrowRight className="icon-arrow-right" style={{fontSize:"90%", paddingBottom:"3px"}}/>
             </Link>
             <div className="quick-links-dropdown">
               <button className="dropdown-toggle">Quick Links</button>
               <ul className="quick-links-dropdown-menu">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <Link to="#">{link}</Link>
+                    <Link to="#" key={quickLinks.id}>{link}</Link>
                   </li>
                 ))}
               </ul>

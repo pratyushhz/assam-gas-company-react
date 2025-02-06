@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
+import { FaArrowRight } from "react-icons/fa";
 // import "slick-carousel/slick/slick-theme.css";
 
 const Certifications = () => {
@@ -85,7 +86,7 @@ const Certifications = () => {
           </div>
           <div className="col-sm-12 col-md-12 col-lg-4 offset-lg-1">
             <a href="#" className="btn btn__primary btn__outlined btn__custom">
-              <i className="icon-arrow-right"></i>
+              <FaArrowRight className='icon-arrow-right'/>
               <span>View All</span>
             </a>
           </div>

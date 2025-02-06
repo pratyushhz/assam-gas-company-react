@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
+import { FaArrowRight } from "react-icons/fa";
 
 const RemarkableLegacy = () => {
   // LegacyData.js
@@ -142,7 +143,7 @@ const RemarkableLegacy = () => {
                 href="#"
                 className="new-btn-style btn btn__primary btn__outlined btn__custom"
               >
-                <i className="icon-arrow-right"></i>
+                <FaArrowRight className='icon-arrow-right'/>
                 <span>View All</span>
               </a>
             </div>

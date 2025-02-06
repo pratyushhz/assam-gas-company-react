@@ -1,6 +1,6 @@
 import React from 'react';
 import Img from "../../assets/new-images/about-us-img.jpg"
-
+import { FaArrowRight } from "react-icons/fa";
 
 const AboutCompany = () => {
   return (
@@ -32,7 +32,8 @@ const AboutCompany = () => {
               </p>
               <div className="d-flex align-items-center mt-0 new-btn feature-item">
                 <a href="#" className="btn__link mr-30 mt-0">
-                  <i className="icon-arrow-right icon-filled"></i>
+                  {/* <i className="icon-arrow-right icon-filled"></i> */}
+                  <FaArrowRight className="icon-filled" />
                   <span>Read More</span>
                 </a>
               </div>

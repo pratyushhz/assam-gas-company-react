@@ -1,6 +1,8 @@
 import Slider from "react-slick";
 import Vertical from "./Vertical";
-import useFetchHomeAPI from "../hooks/useFetchHomeAPI"
+import useFetchHomeAPI from "../hooks/useFetchHomeAPI";
+import { FaArrowRight } from "react-icons/fa";
+import { CustomNextArrow, CustomPrevArrow } from "./CustomPrevArrow";
 // import "slick-carousel/slick/slick.css";
 
 const VerticalList = () => {
@@ -14,6 +16,8 @@ const VerticalList = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
     responsive: [
       {
         breakpoint: 992,
@@ -41,7 +45,7 @@ const VerticalList = () => {
         <img src="assets/images/backgrounds/5.jpg" alt="background" />
       </div> */}
       <div className="container">
-        <div className="row mb-70">
+        <div className="row mb-30">
           <div className="col-12">
             <h2 className="heading__subtitle color-primary">Verticals</h2>
           </div>
@@ -63,7 +67,7 @@ const VerticalList = () => {
         <div className="row mt-4">
           <div className="col-sm-12 col-md-12 col-lg-5">
             <a href="request-quote.html" className="btn btn__primary btn__primary-style2 mr-30">
-              <i className="icon-arrow-right"></i>
+              <FaArrowRight className="icon-arrow-right"/>
               <span>View All</span>
             </a>
           </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CustomerUpdateBg from "../assets/new-images/about-us-img.jpg"
+import { FaArrowRight } from "react-icons/fa";
 
 const CustomerUpdates = () => {
   const [updates, setUpdates] = useState([]);
@@ -22,7 +23,7 @@ const CustomerUpdates = () => {
   return (
     <div className="col-sm-12 col-md-12 col-lg-4">
       <div className="customer-service-section-2">
-        <div className="widget widget-help bg-overlay bg-overlay-primary">
+        <div className="widget widget-help bg-overlay bg-overlay-2 bg-overlay-primary">
           <div className="bg-img">
             <img src={CustomerUpdateBg} alt="banner" />
           </div>
@@ -53,7 +54,8 @@ const CustomerUpdates = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <i className="icon-arrow-right"></i>{" "}
+                          {/* <i className="icon-arrow-right"></i>{" "} */}
+                          <FaArrowRight className="icon-arrow-right" />{" "}
                           <span>{update.description}</span>
                         </a>
                         <hr />
@@ -67,7 +69,7 @@ const CustomerUpdates = () => {
               href="request-quote.html"
               className="btn btn__primary btn__primary-style2 mr-30 mt-4"
             >
-              <i className="icon-arrow-right"></i>
+              <FaArrowRight className="icon-filled" />
               <span>View All</span>
             </a>
           </div>

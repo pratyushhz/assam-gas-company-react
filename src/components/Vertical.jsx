@@ -1,4 +1,5 @@
 // import React from 'react';
+import { FaArrowRight } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
 const Vertical = ({ title, shortDescription, image, link }) => {
@@ -12,7 +13,7 @@ const Vertical = ({ title, shortDescription, image, link }) => {
         <p className="service__desc">{shortDescription}</p>
         <a href={link} className="btn btn__secondary btn__outlined btn__custom">
           <span>Read More</span>
-          <i className="icon-arrow-right"></i>
+          <FaArrowRight className="icon-arrow-right"/>
         </a>
       </div>
     </div>
