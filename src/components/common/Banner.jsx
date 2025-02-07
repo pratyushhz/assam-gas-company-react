@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useRef } from "react";
 
+// eslint-disable-next-line react/prop-types
 const Banner = ({ title, breadcrumbs, backgroundImage }) => {
 
     const bannerRef = useRef();

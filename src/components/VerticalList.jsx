@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import Vertical from "./Vertical";
 import useFetchHomeAPI from "../hooks/useFetchHomeAPI";
-import { FaArrowRight } from "react-icons/fa";
-import { CustomNextArrow, CustomPrevArrow } from "./CustomPrevArrow";
+// import { FaArrowRight } from "react-icons/fa";
+import { CustomNextArrow, CustomPrevArrow } from "./CustomPrevArrow"
 // import "slick-carousel/slick/slick.css";
 
 const VerticalList = () => {
@@ -67,7 +67,7 @@ const VerticalList = () => {
         <div className="row mt-4">
           <div className="col-sm-12 col-md-12 col-lg-5">
             <a href="request-quote.html" className="btn btn__primary btn__primary-style2 mr-30">
-              <FaArrowRight className="icon-arrow-right"/>
+              {/* <FaArrowRight className="icon-arrow-right"/> */}
               <span>View All</span>
             </a>
           </div>

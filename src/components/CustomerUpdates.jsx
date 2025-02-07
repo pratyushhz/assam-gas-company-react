@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CustomerUpdateBg from "../assets/new-images/about-us-img.jpg"
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa"
 
 const CustomerUpdates = () => {
   const [updates, setUpdates] = useState([]);

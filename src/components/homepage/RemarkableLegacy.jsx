@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa"
 
 const RemarkableLegacy = () => {
   // LegacyData.js
