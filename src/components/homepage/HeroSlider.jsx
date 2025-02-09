@@ -78,6 +78,8 @@ const HeroSlider = () => {
     afterChange: handleAfterChange,
   };
 
+  
+
   return (
     <section className="slider">
       <Slider {...settings} ref={sliderRef} className="slick-carousel carousel-arrows-light carousel-dots-light m-slides-0">

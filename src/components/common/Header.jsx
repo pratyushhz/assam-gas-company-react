@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import twitterLogo from "../../assets/icons/icons8-twitter-30.png"
 import youTubeLogo from "../../assets/icons/icons8-youtube-30.png"
 import { MdPhone } from "react-icons/md";
+// import Shimmer from '../Shimmer';
 
 const Header = () => {
 
@@ -24,6 +25,9 @@ const Header = () => {
     fetchNavItems();
   }, []);
 
+  // if(navItems.length === 0) {
+  //   return <Shimmer/>
+  // }
 
 
   return (
