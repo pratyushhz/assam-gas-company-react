@@ -9,6 +9,7 @@ import Certifications from "../../components/homepage/Certifications";
 import RemarkableLegacy from "../../components/homepage/RemarkableLegacy";
 import Partners from "../../components/homepage/Partners";
 import VerticalCategoryList from "../../components/VerticalCategoryList";
+// import Shimmer from "../../components/Shimmer";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Certifications/>
       <RemarkableLegacy/>
       <Partners/>
+      {/* <Shimmer/> */}
     </div>
   );
 };

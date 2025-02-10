@@ -2,8 +2,8 @@
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Autoplay } from 'swiper/modules';
 // import 'swiper/css';
-// import 'swiper/css/autoplay';
-// import swiperSliderBg from "../../assets/new-images/about-us-img.jpg";
+// import 'swiper/css/Linkutoplay';
+// import swiperSliderBg from "../../Linkssets/new-images/Linkbout-us-img.jpg";
 // import { FaArrowRight } from "react-icons/fa";
 
 // const AGCLInAction = () => {
@@ -12,7 +12,7 @@
 //   const [error, setError] = useState(null);
 
 //   useEffect(() => {
-//     fetch("http://167.71.235.8/agcl/public/api/home")
+//     fetch("http://167.71.235.8/Linkgcl/public/Linkpi/home")
 //       .then((response) => response.json())
 //       .then((data) => {
 //         if (data && data.agcl_in_action) {
@@ -42,10 +42,10 @@
 //             <h3 className="heading__title color-white mt-20">AGCL in Action</h3>
 //           </div>
 //           <div className="col-sm-12 col-md-12 col-lg-6 offset-lg-1">
-//             <a href="#" className="new-btn-style btn btn__primary btn__outlined btn__custom">
+//             <Link to="" className="new-btn-style btn btn__primary btn__outlined btn__custom">
 //               <FaArrowRight className='icon-arrow-right'/>
 //               <span>View All</span>
-//             </a>
+//             </Link>
 //           </div>
 //         </div>
 //       </div>
@@ -86,7 +86,7 @@
 //                   <a href={item.link || "#"} className="btn btn__primary btn__primary-style2 mr-30 mt-4">
 //                     <FaArrowRight className='icon-arrow-right'/>
 //                     <span>View More</span>
-//                   </a>
+//                   </Link>
 //                 </div>
 //               </div>
 //             </SwiperSlide>
@@ -108,7 +108,9 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import swiperSliderBg from "../../assets/new-images/about-us-img.jpg";
+// import swiperSliderBg from "../../assets/new-images/about-us-img.jpg";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AGCLInAction = () => {
   const [agclInAction, setAgclInAction] = useState([]);
@@ -153,10 +155,10 @@ const AGCLInAction = () => {
             <h3 className="heading__title color-white mt-20">AGCL in Action</h3>
           </div>
           <div className="col-sm-12 col-md-12 col-lg-6 offset-lg-1">
-            <a href="#" className="new-btn-style btn btn__primary btn__outlined btn__custom">
+            <Link to="" className="new-btn-style btn btn__primary btn__outlined btn__custom">
               <FaArrowRight className="icon-arrow-right" />
               <span>View All</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -169,7 +171,7 @@ const AGCLInAction = () => {
           loop={true}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           breakpoints={{
-            640: { slidesPerView: 1.4 },
+            640: { slidesPerView: 1 },
             768: { slidesPerView: 2.5 },
             1024: { slidesPerView: 2.2 },
           }}
@@ -190,10 +192,10 @@ const AGCLInAction = () => {
                 <div className="slide-content">
                   <h2>{item.title}</h2>
                   <p>{item.description}</p>
-                  <a href={item.link || "#"} className="btn btn__primary btn__primary-style2 mr-30 mt-4">
+                  <Link to={item.link || "#"} className="btn btn__primary btn__primary-style2 mr-30 mt-4">
                     <FaArrowRight className="icon-arrow-right" />
                     <span>View More</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>
@@ -215,8 +217,8 @@ export default AGCLInAction;
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Autoplay } from 'swiper/modules';
 // import 'swiper/css';
-// import 'swiper/css/autoplay';
-// import swiperSliderBg from "../../assets/new-images/about-us-img.jpg"
+// import 'swiper/css/Linkutoplay';
+// import swiperSliderBg from "../../Linkssets/new-images/Linkbout-us-img.jpg"
 // import { FaArrowRight } from "react-icons/fa";
 
 // const slides = [
@@ -272,7 +274,7 @@ export default AGCLInAction;
 //             >
 //               <FaArrowRight className='icon-arrow-right'/>
 //               <span>View All</span>
-//             </a>
+//             </Link>
 //           </div>
 //         </div>
 //       </div>
@@ -322,7 +324,7 @@ export default AGCLInAction;
 //                 >
 //                   <FaArrowRight className='icon-arrow-right'/>
 //                   <span>View All</span>
-//                 </a>
+//                 </Link>
 //               </div>
 //             </SwiperSlide>
 //           ))}

@@ -7,7 +7,6 @@ const Banner = ({ title, breadcrumbs, backgroundImage }) => {
     const bannerRef = useRef();
 
     useEffect(() => {
-      // Apply the background image using inline styles
       if (bannerRef.current) {
         bannerRef.current.style.backgroundImage = `url(${backgroundImage})`;
         bannerRef.current.style.backgroundSize = "cover";
