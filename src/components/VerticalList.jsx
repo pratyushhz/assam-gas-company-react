@@ -7,7 +7,7 @@ import { CustomNextArrow, CustomPrevArrow } from "./CustomPrevArrow"
 
 const VerticalList = () => {
   const { verticals, loading, error } = useFetchHomeAPI();
-  console.log(verticals)
+  console.log("Verticals", verticals)
 
   const settings = {
     dots: true,

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Subpage = () => {
     const { section, slug } = useParams();
+
     console.log(section, slug)
     const [subPageInfo, setSubPageInfo] = useState(null);
     const [bannerImage, setBannerImage] = useState("");
