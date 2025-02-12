@@ -37,7 +37,7 @@ const Subpage = () => {
             <section className="page-title page-title-layout2 bg-overlay bg-overlay-2 bg-parallax" style={{ backgroundImage: `url(${bannerImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
                 <div className="container">
                     <div className="row">
-                    <div className="col-sm-12 col-md-12 col-lg-6">
+                    <div className="col-sm-12 col-md-12 col-lg-8">
                         <h1 className="pagetitle__heading mb-0">{slug.replace(/-/g, " ")}</h1>
                         <div className="d-flex align-items-center mt-30">
                         <a href="#" className="btn btn__white">

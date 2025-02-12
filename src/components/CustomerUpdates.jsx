@@ -23,11 +23,15 @@ const CustomerUpdates = () => {
   return (
     <div className="col-sm-12 col-md-12 col-lg-4">
       <div className="customer-service-section-2">
-        <div className="widget widget-help bg-overlay bg-overlay-2 bg-overlay-primary">
-          <div className="bg-img">
+        <div className="widget widget-help bg-overlay banner-layout2 bg-overlay-primary agcl_in_action" style={{
+                backgroundImage: `url(${CustomerUpdateBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+              }}>
+          {/* <div className="bg-img">
             <img src={CustomerUpdateBg} alt="banner" />
-          </div>
-          <div className="widget__content">
+          </div> */}
+          <div className="widget__content" style={{position:"relative", zIndex:2}}>
             <h3
               className="cta__title color-white"
               style={{
