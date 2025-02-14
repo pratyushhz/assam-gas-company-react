@@ -160,9 +160,9 @@ const Header = () => {
                   <>
                     <button className="dropdown-toggle" data-toggle="dropdown"></button>
                     <ul className="dropdown-menu">
-                      {menu.links.map((link, idx) => (
+                      {menu.links.map((links, idx) => (
                         <li className="nav__item" key={idx}>
-                          <Link to={link.path} className="nav__item-link">{link.title}</Link>
+                          <Link to={links.path} className="nav__item-link">{links.title}</Link>
                         </li>
                       ))}
                     </ul>

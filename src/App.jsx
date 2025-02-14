@@ -13,7 +13,7 @@ function App() {
       // Simulate API call
       setTimeout(() => {
         setIsLoading(false);
-      }, 2000); // Simulating a 2-second fetch delay
+      }, 2000);
     }, []);
 
   return(
