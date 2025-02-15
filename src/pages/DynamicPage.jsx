@@ -1,46 +1,42 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import WhoWeAre from "../pages/Home/AboutUs/WhoWeAre";
+import OurLeadership from "../pages/Home/AboutUs/OurLeadership";
 
-const API_URL = "http://167.71.235.8/agcl/public/api/pages";
-
-function DynamicPage() {
-  const { section, slug } = useParams();
+const DynamicPage = () => {
+  const { urlTitle } = useParams();
+  console.log(urlTitle)
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(API_URL);
-        const result = await response.json();
-        console.log("API Response:", result);
-        console.log("Section:", section, "Slug:", slug);
+        const response = await fetch(`http://167.71.235.8/agcl/public/api/${urlTitle}`);
+        if (!response.ok) throw new Error("Failed to fetch data");
 
-        // Find the page data matching the section and slug
-        const pageData = result.find(page => page.section === section && page.slug === slug);
-        setData(pageData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        const json = await response.json();
+        console.log(`${urlTitle} API response:`, json);
+        setData(json);
+      } catch (err) {
+        setError(err.message);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [section, slug]);
+  }, [urlTitle]);
 
   if (loading) return <p>Loading...</p>;
-  if (!data) return <p>Page not found</p>;
+  if (error) return <p>Error: {error}</p>;
 
-  return (
-    
-    <div className="dynamic-page">
+  // Render the appropriate component with the fetched data
+  if (urlTitle === "who-we-are") return <WhoWeAre data={data} />;
+  if (urlTitle === "leadership") return <OurLeadership data={data} />;
 
-
-      <h1>{data.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.content }} />
-    </div>
-  );
-}
+  return <p>Page not found</p>;
+};
 
 export default DynamicPage;

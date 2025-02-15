@@ -3,9 +3,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import Error from './components/Error.jsx';
 import Home from "./pages/Home/Home.jsx"
-import WhoWeAre from './pages/Home/AboutUs/WhoWeAre.jsx';
+// import WhoWeAre from './pages/Home/AboutUs/WhoWeAre.jsx';
 import Subpage from './pages/common/Subpage.jsx';
-// import DynamicPage from './pages/DynamicPage.jsx';
+import DynamicPage from './pages/DynamicPage.jsx';
+// import OurLeadership from './pages/Home/AboutUs/OurLeadership.jsx';
 import Tender from './pages/Tender.jsx';
 
 
@@ -18,10 +19,13 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />
       },
+      // {
+      //   path:":urlTitle",
+      //   element:<WhoWeAre/>
+      // },
       {
-        // path:"who-we-are",
-        path:":urlTitle",
-        element:<WhoWeAre/>
+        path: ":urlTitle",
+        element: <DynamicPage />
       },
       {
         path:"vendors/currenttenders",
