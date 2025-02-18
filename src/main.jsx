@@ -9,6 +9,8 @@ import Subpage from './pages/common/Subpage.jsx';
 // import OurLeadership from './pages/Home/AboutUs/OurLeadership.jsx';
 import Tender from './pages/Tender.jsx';
 import OurLeadership from './pages/Home/AboutUs/OurLeadership.jsx';
+import VentureDetail from './components/VentureDetail.jsx';
+import VentureList from './pages/VentureList.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,29 +27,15 @@ const router = createBrowserRouter([
         path:"/who-we-are",
         element:<WhoWeAre/>,
       },
+      // {
+      //   path: "/leadership",
+      //   element: <OurLeadership />,
+      // },
       {
-        path: "/leadership",
+        path: "/about-us/our-leadership",
         element: <OurLeadership />,
       },
-      // {
-      //   path: "/:who-we-are",
-      //   element: <WhoWeAre />,
-      // },
-      // {
-      //   path: "/:leadership",
-      //   element: <OurLeadership />,
-      // },
-
-      // {
-      //   path:"/:whoweare",
-      //   element:<WhoWeAre/>,
-      // },
-      // {
-      //   path: "/:leadership",
-      //   element: <OurLeadership />,
-      // },
       
-
       // {
       //   path: ":urlTitle",
       //   element: <DynamicPage />
@@ -60,10 +48,16 @@ const router = createBrowserRouter([
         path:":section/:slug",
         element:<Subpage/>
       },
-      // {
-      //   path: ":section/:slug",
-      //   element: <DynamicPage />
-      // },
+
+      {
+        path: "/about-us/joint-ventures",
+        element: <VentureList />,
+      },
+      {
+        path: "/venture/:id",
+        element: <VentureDetail />,
+      },
+      
     ],
     errorElement: <Error/>,
   },

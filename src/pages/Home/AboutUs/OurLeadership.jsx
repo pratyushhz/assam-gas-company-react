@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import Banner from "../../../components/common/Banner";
 
